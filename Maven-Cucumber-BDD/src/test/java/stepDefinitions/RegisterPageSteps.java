@@ -36,21 +36,7 @@ public class RegisterPageSteps {
 	public void reloadRegisterPage() {
 		registerPage.refreshCurrentPage(driver);
 	}
-	
-//	@When("^Input infor invalid to Register Form$")
-//	public void inputInforToRegisterForm(DataTable customerTable) {
-//	    List<Map<String, String>> customer = customerTable.asMaps(String.class, String.class);
-//	    registerPage.sendKeyToFirstNameTextbox(customer.get(0).get("FirstName"));
-//	    registerPage.sendKeyToLastNameTextbox(customer.get(0).get("LastName"));
-//	    registerPage.sendKeyToEmailTextbox("123456");
-//	    registerPage.sendKeyToPasswordTextbox(customer.get(0).get("Password"));
-//	    registerPage.sendKeyToConfirmPasswordTextbox(customer.get(0).get("Password"));
-//	}
 
-	@Then("^Verify Error Invalid Email message is displayed$")
-	public void verifyErrorInvalidEmailMessageIsDisplayed() {
-		Assert.assertEquals(registerPage.getErrorInvalidEmailMessage(),"Wrong email");
-	}
 
 	@Then("^Verify Success Register Message is displayed$")
 	public void verifySuccessRegisterMessageIsDisplayed()  {

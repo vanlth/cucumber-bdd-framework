@@ -6,12 +6,6 @@ Feature: register_check_infor
   	Given Open Register page
   	When Click to "Register" button
   	Then Verify Error Empty FirtName message is displayed
-  	
-    When Reload Register page
-    And Input infor invalid to Register Form
-      | FirstName   | LastName   | Email             | Password   | ConfirmPassword | 
-      | <FirstName> | <LastName> | 123456 | <Password> | <Password>      |     | 
-    Then Verify Error Invalid Email message is displayed
     
     When Reload Register page
     And Click to "Male" radio button
