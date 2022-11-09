@@ -1,7 +1,7 @@
-@register_check_infor
+@Register_and_check_infor
 Feature: register_check_infor
 
-@Register
+@register
   Scenario Outline: Register testcase
   	Given Open Register page
   	When Click to "Register" button
@@ -23,7 +23,7 @@ Feature: register_check_infor
     Then Verify Success Register Message is displayed
     When Click to logout link
   
-@Check_Infor
+@check_Infor
   Scenario Outline: Check customer infor
     Given Open Login Page
  		When Input to "Email" textbox with value "<Email>"
