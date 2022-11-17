@@ -18,6 +18,7 @@ public class HomePageSteps {
 	
 	@Given("^Open Register page$")
 	public void openRegisterPage()  {
+		System.out.println("open register");
 		homePage.openUserRegisterPage();
 	}
 	

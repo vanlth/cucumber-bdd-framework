@@ -25,14 +25,13 @@ public class Hooks {
 	public synchronized static WebDriver openAndQuitBrowser() {
 		// Run by Maven command line
 		String browser = System.getProperty("BROWSER");
-		System.out.println("Browser name run by command line = " + browser);
 
 		// Check driver đã được khởi tạo hay chưa?
 		if (driver == null) {
 			
 			// Happy path case
 			try {
-				// Kiem tra BROWSER = null -> gan = chrome/ firefox (browser default for project)
+				// Kiem tra BROWSER = null -> gan = firefox (browser default for project)
 				if (browser == null) {
 					// Get browser name from Environment Variable in OS
 					browser = System.getenv("BROWSER");
@@ -73,16 +72,16 @@ public class Hooks {
 					driver = new InternetExplorerDriver();
 					break;
 				default:
-					WebDriverManager.chromedriver().setup();
-					driver = new ChromeDriver();
+					WebDriverManager.firefoxdriver().setup();
+					driver = new FirefoxDriver();
 					break;
 				}
 				// Browser crash/ stop
 			} catch (UnreachableBrowserException e) {
-				driver = new ChromeDriver();
+				driver = new FirefoxDriver();
 				// Driver crash
 			} catch (WebDriverException e) {
-				driver = new ChromeDriver();
+				driver = new FirefoxDriver();
 			}
 			finally {
 				Runtime.getRuntime().addShutdownHook(new Thread(new BrowserCleanup()));

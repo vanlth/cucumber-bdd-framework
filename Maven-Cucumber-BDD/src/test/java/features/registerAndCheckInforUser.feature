@@ -1,5 +1,5 @@
-@register_check_infor
-Feature: register_check_infor
+@register_and_check_infor
+Feature: user register
 
 @Register
   Scenario Outline: Register testcase
@@ -22,8 +22,9 @@ Feature: register_check_infor
     And Click to "Register" button
     Then Verify Success Register Message is displayed
     When Click to logout link
+
     Given Open Login Page
- 		When Input to "Email" textbox with value "<Email>"
+    When Input to "Email" textbox with value "<Email>"
     And Input to "Password" textbox with value "<Password>"
     And Click to "Log in" button
     Given Open Custommer Infor page
@@ -31,7 +32,7 @@ Feature: register_check_infor
     Then The valid text is displayed at "LastName" with value "<LastName>"
     Then The valid text is displayed at "Email" with value "<Email>"
     Then The valid text is displayed at "Company" with value "<Company>"
-    
-   Examples:
-      | FirstName | LastName | DateOfBirthDay | DateOfBorthMonth | DateOfBirthYear | Email       | Company | Password | 
-      | Auto      | Test     | 3              | January          | 1997            | autotesting | Omi     | 123456   | 
+
+    Examples: 
+      | FirstName | LastName | DateOfBirthDay | DateOfBorthMonth | DateOfBirthYear | Email       | Company | Password |
+      | Auto      | Test     |              3 | January          |            1997 | autotesting | Omi     |   123456 |

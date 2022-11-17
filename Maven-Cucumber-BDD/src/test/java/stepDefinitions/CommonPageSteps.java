@@ -33,11 +33,11 @@ public class CommonPageSteps {
 	}
 
 	@When("^Input to \"([^\"]*)\" textbox with value \"([^\"]*)\"$")
-	public void inputToTextboxWithValue(String textboxID, String value){
+	public void inputToTextboxWithValue(String textboxID, String textValue){
 		if (textboxID.equals("Email")) {
-			value = email;
+			textValue = email;
 		}
-		commonPage.inputToTextboxByID(driver, textboxID, value);
+		commonPage.inputToTextboxByID(driver, textboxID, textValue);
 	}
 
 	@When("^Select to \"([^\"]*)\" dropdown with value \"([^\"]*)\"$")
@@ -52,11 +52,11 @@ public class CommonPageSteps {
 
 
 	@Then("^The valid text is displayed at \"([^\"]*)\" with value \"([^\"]*)\"$")
-	public void theValidTextIsDisplayedAtWithValue(String textboxID, String validText){	
+	public void theValidTextIsDisplayedAtWithValue(String textboxID, String value){
 		if (textboxID.equals("Email")) {
-			validText = email;
+			value = email;
 		}
-		Assert.assertEquals(commonPage.getTextboxValueByID(driver, textboxID), validText);
+		Assert.assertEquals(commonPage.getTextboxValueByID(driver, textboxID), value);
 	}
 	
 	public int getRandomNumber() {

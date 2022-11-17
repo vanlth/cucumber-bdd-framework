@@ -11,10 +11,10 @@ import cucumber.api.junit.Cucumber;
 		features = "src/test/java/features",
 		glue = "stepDefinitions",
 		monochrome = true ,
-		plugin = {"pretty", "html:target/site/cucumber-report-default","json:target/site/cucumber_01.json"},
+		plugin = {"pretty", "html:target/site/cucumber-report-default","json:target/site/cucumber_02.json"},
 		snippets = SnippetType.CAMELCASE,
 		tags = "@register_and_check_infor")
 
-public class TestRunner {
+public class SecondTestRunner {
 
 }

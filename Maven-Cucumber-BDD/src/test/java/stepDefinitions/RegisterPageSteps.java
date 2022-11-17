@@ -1,13 +1,10 @@
 package stepDefinitions;
 
-import java.util.List;
-import java.util.Map;
 
 import org.junit.Assert;
 import org.openqa.selenium.WebDriver;
 
 import commons.PageGeneratorManager;
-import cucumber.api.DataTable;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
@@ -17,10 +14,6 @@ import pageObjects.nopCommerce.user.UserRegisterPageObject;
 public class RegisterPageSteps {
 	WebDriver driver;
 	UserRegisterPageObject registerPage;
-	
-	String firstName="Auto";
-	String lastName="Testing";
-	String password="123456";
 
 	public RegisterPageSteps() {
 		driver = Hooks.openAndQuitBrowser();
@@ -36,7 +29,6 @@ public class RegisterPageSteps {
 	public void reloadRegisterPage() {
 		registerPage.refreshCurrentPage(driver);
 	}
-
 
 	@Then("^Verify Success Register Message is displayed$")
 	public void verifySuccessRegisterMessageIsDisplayed()  {
