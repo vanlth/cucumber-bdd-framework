@@ -145,7 +145,7 @@
 						<configuration>
 							<projectName>NOPCOMMERCE CUCUMBER REPORT</projectName>
 							<outputDirectory>${project.build.directory}/site/cucumber-reporting</outputDirectory>
-							<inputDirectory>${project.build.directory}/site</inputDirectory>
+							<inputDirectory>${project.build.directory}/site/cucumber.json</inputDirectory>
 							<jsonFiles>
 								<param>**/*.json</param>
 							</jsonFiles>

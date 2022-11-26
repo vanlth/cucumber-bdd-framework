@@ -31,13 +31,13 @@ public class Hooks {
 			
 			// Happy path case
 			try {
-				// Kiem tra BROWSER = null -> gan = firefox (browser default for project)
+				// Kiem tra BROWSER = null -> gan = chrome (browser default for project)
 				if (browser == null) {
 					// Get browser name from Environment Variable in OS
 					browser = System.getenv("BROWSER");
 					if (browser == null) {
 						// Set default browser
-						browser = "firefox";
+						browser = "chrome";
 					}
 				}
 
@@ -72,16 +72,16 @@ public class Hooks {
 					driver = new InternetExplorerDriver();
 					break;
 				default:
-					WebDriverManager.firefoxdriver().setup();
-					driver = new FirefoxDriver();
+					WebDriverManager.chromedriver().setup();
+					driver = new ChromeDriver();
 					break;
 				}
 				// Browser crash/ stop
 			} catch (UnreachableBrowserException e) {
-				driver = new FirefoxDriver();
+				driver = new ChromeDriver();
 				// Driver crash
 			} catch (WebDriverException e) {
-				driver = new FirefoxDriver();
+				driver = new ChromeDriver();
 			}
 			finally {
 				Runtime.getRuntime().addShutdownHook(new Thread(new BrowserCleanup()));
